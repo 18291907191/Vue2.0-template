@@ -1,4 +1,4 @@
-import { userGetareas, addUser, userConfig, userLogin, getInfo } from '@/api/user'
+import { userGetareas, addUser, userConfig, userLogin } from '@/api/user'
 import { getToken, setToken, removeToken, setCookie } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
 
@@ -66,8 +66,8 @@ const actions = {
   },
 
   // get user info
-  getInfo({ commit, state }) {
-    return new Promise((resolve, reject) => {
+  getInfo({ commit }) {
+    return new Promise((resolve) => {
       let data = {
         avatar: "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
         introduction: "I am a super administrator",
@@ -80,29 +80,12 @@ const actions = {
       commit('SET_AVATAR', avatar)
       commit('SET_INTRODUCTION', introduction)
       resolve(data)
-      // getInfo(state.token).then(response => {
-      //   const { data } = response
-      //   if (!data) {
-      //     reject('Verification failed, please Login again.')
-      //   }
-      //   const { roles, name, avatar, introduction } = data
-      //   if (!roles || roles.length <= 0) {
-      //     reject('getInfo: roles must be a non-null array!')
-      //   }
-      //   commit('SET_ROLES', roles)
-      //   commit('SET_NAME', name)
-      //   commit('SET_AVATAR', avatar)
-      //   commit('SET_INTRODUCTION', introduction)
-      //   resolve(data)
-      // }).catch(error => {
-      //   reject(error)
-      // })
     })
   },
 
   // user logout
-  logout({ commit, state, dispatch }) {
-    return new Promise((resolve, reject) => {
+  logout({ commit }) {
+    return new Promise((resolve) => {
       commit('SET_TOKEN', '');
       commit("SET_USERID", '');
       commit('SET_ROLES', []);
@@ -110,18 +93,6 @@ const actions = {
       resetRouter();
       setCookie('user_id', '')
       resolve();
-      // logout(state.token).then(() => {
-      //   commit('SET_TOKEN', '')
-      //   commit('SET_ROLES', [])
-      //   removeToken()
-      //   resetRouter()
-      //   // reset visited views and cached views
-      //   // to fixed https://github.com/PanJiaChen/vue-element-admin/issues/2485
-      //   dispatch('tagsView/delAllViews', null, { root: true })
-      //   resolve()
-      // }).catch(error => {
-      //   reject(error)
-      // })
     })
   },
 
@@ -137,6 +108,7 @@ const actions = {
 
   // dynamically modify permissions
   changeRoles({ commit, dispatch }, role) {
+    // eslint-disable-next-line no-async-promise-executor
     return new Promise(async resolve => {
       const token = role + '-token'
       commit('SET_TOKEN', token)
@@ -156,7 +128,8 @@ const actions = {
     })
   },
   // 添加用户
-  addUser({ commit }, params) {
+  // eslint-disable-next-line no-unused-vars
+  addUser({commit}, params) {
     return new Promise((resolve,reject) => {
       addUser(params).then(res => {
         resolve(res);
