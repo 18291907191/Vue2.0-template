@@ -1,0 +1,172 @@
+{
+  "menuList": [
+    {
+      "path": "/404"
+    },
+    {
+      "path": "/401"
+    },
+    {
+      "path": "/",
+      "redirect": "/examine"
+    },
+    {
+      "path": "/examine",
+      "redirect": "/examine/register",
+      "name": "Examine",
+      "meta": {
+        "title": "用户审核",
+        "icon": "edit"
+      },
+      "children": [
+        {
+          "path": "register",
+          "name": "registration",
+          "meta": {
+            "title": "注册审核"
+          }
+        },
+        {
+          "path": "basics",
+          "name": "basics",
+          "meta": {
+            "title": "基础信息审核"
+          }
+        },
+        {
+          "path": "identity",
+          "name": "identity",
+          "meta": {
+            "title": "身份认证审核"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/user",
+      "redirect": "/user/index",
+      "name": "userList",
+      "children": [
+        {
+          "path": "index",
+          "name": "user",
+          "meta": { "title": "用户列表", "icon": "user" }
+        }
+      ]
+    },
+    {
+      "path": "/task",
+      "redirect": "/task/create",
+      "name": "Task",
+      "meta": {
+        "title": "任务管理",
+        "icon": "form"
+      },
+      "children": [
+        {
+          "path": "create",
+          "name": "registration",
+          "meta": {
+            "title": "创建任务"
+          }
+        },
+        {
+          "path": "identity",
+          "name": "registration",
+          "meta": {
+            "title": "任务状态"
+          }
+        },
+        {
+          "path": "workreview",
+          "name": "registration",
+          "meta": {
+            "title": "作品审核"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/withdrawal",
+      "redirect": "/examine/flow",
+      "name": "Withdrawal",
+      "meta": {
+        "title": "提现管理",
+        "icon": "money"
+      },
+      "children": [
+        {
+          "path": "set",
+          "name": "registration",
+          "meta": {
+            "title": "提现设置"
+          }
+        },
+        {
+          "path": "setlist",
+          "name": "setList",
+          "meta": {
+            "title": "提现配置列表"
+          }
+        },
+        {
+          "path": "audit",
+          "name": "audit",
+          "meta": {
+            "title": "提现审核"
+          }
+        },
+        {
+          "path": "flow",
+          "name": "flow",
+          "meta": {
+            "title": "提现流水"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/works",
+      "redirect": "/works/list",
+      "children": [
+        {
+          "path": "list",
+          "name": "worksList",
+          "meta": {
+            "title": "作品资源库",
+            "icon": "eye-open",
+            "isLoading": true
+          }
+        }
+      ]
+    },
+    {
+      "path": "/organization",
+      "redirect": "/organization/list",
+      "meta": {
+        "title": "机构管理",
+        "icon": "form",
+        "isLoading": true
+      },
+      "children": [
+        {
+          "path": "list",
+          "name": "organizationList",
+          "meta": {
+            "title": "机构列表",
+            "isLoading": true
+          }
+        },
+        {
+          "path": "housekeepers/list",
+          "name": "housekeepersList",
+          "meta": {
+            "title": "管家列表",
+            "isLoading": true
+          }
+        }
+      ]
+    },
+    { "path": "*", "redirect": "/404", "hidden": true }
+  ]
+}

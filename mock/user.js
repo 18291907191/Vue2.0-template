@@ -1,7 +1,7 @@
 /**
 * Date: 2020-09-19 10:07:17
 * LastEditors: chaizhiyang(狗尾草)
-* LastEditTime: 2020-09-19 11:11:42
+* LastEditTime: 2020-09-19 17:05:12
 * Description: please write description
 */
 
@@ -35,6 +35,7 @@ export default [
     url: '/vue-element-admin/user/login',
     type: 'post',
     response: config => {
+      console.log('38', config);
       const { username } = config.body
       const token = tokens[username]
       // mock error

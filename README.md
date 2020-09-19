@@ -1,7 +1,7 @@
 <!--
  * @Date: 2020-09-19 09:50:49
  * @LastEditors: chaizhiyang(狗尾草)
- * @LastEditTime: 2020-09-19 11:19:46
+ * @LastEditTime: 2020-09-19 11:21:20
  * @Description: please write description
 -->
 # richsmiley-manage-pc
@@ -34,3 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * node -v v14.10.0
 * npm -v 6.14.8
 * vue -V @vue/cli 4.5.6
+
+
+## Mock
+请求地址：localhost:8080/dev-api/*
