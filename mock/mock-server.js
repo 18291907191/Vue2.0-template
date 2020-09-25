@@ -1,7 +1,7 @@
 /**
 * Date: 2020-09-19 10:03:55
 * LastEditors: chaizhiyang(狗尾草)
-* LastEditTime: 2020-09-25 17:56:28
+* LastEditTime: 2020-09-25 18:00:36
 * Description: please write description
 */
 const chokidar = require('chokidar')
@@ -9,7 +9,6 @@ const bodyParser = require('body-parser')
 const chalk = require('chalk')
 const path = require('path')
 const Mock = require('mockjs')
-console.log('12');
 const mockDir = path.join(process.cwd(), 'mock')
 function registerRoutes(app) {
   let mockLastIndex
