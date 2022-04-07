@@ -16,7 +16,7 @@ module.exports = {
         }
       }
     },
-    before: process.env.NODE_ENV == 'dev' ? require('./mock/mock-server.js') : null
+    before: process.env.NODE_ENV == 'development' ? require('./mock/mock-server.js') : null
   },
   lintOnSave: false,
   chainWebpack: config => {
